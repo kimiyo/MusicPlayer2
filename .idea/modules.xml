@@ -3,7 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MusicPlayer2.iml" filepath="$PROJECT_DIR$/MusicPlayer2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/androidmediaplayerexample02/androidmediaplayerexample02.iml" filepath="$PROJECT_DIR$/androidmediaplayerexample02/androidmediaplayerexample02.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flippagesapp/flippagesapp.iml" filepath="$PROJECT_DIR$/flippagesapp/flippagesapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/imageviewtesting/imageviewtesting.iml" filepath="$PROJECT_DIR$/imageviewtesting/imageviewtesting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/musicplayerexample/musicplayerexample.iml" filepath="$PROJECT_DIR$/musicplayerexample/musicplayerexample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/viewpager/viewpager.iml" filepath="$PROJECT_DIR$/viewpager/viewpager.iml" />
     </modules>
   </component>
 </project>

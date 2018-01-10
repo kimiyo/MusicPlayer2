@@ -7,7 +7,9 @@ package com.kimiyo.jonghoonkim.musicplayer2;
  * Sue Smith - February 2014
  */
 
-public class Song {
+import java.io.Serializable;
+
+public class Song implements Serializable{
 	
 	private long id;
 	private String title;

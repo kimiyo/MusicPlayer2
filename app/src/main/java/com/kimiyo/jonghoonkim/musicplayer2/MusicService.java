@@ -45,6 +45,7 @@ MediaPlayer.OnCompletionListener {
 	private Random rand;
 
 	public void onCreate(){
+		Log.d("MusicService","called onCreate()");
 		//create the service
 		super.onCreate();
 		//initialize position
@@ -58,6 +59,7 @@ MediaPlayer.OnCompletionListener {
 	}
 
 	public void initMusicPlayer(){
+		Log.d("MusicService","called initMusicPlayer()");
 		//set player properties
 		player.setWakeMode(getApplicationContext(), 
 				PowerManager.PARTIAL_WAKE_LOCK);
@@ -96,6 +98,7 @@ MediaPlayer.OnCompletionListener {
 
 	//play a song
 	public void playSong(){
+		Log.d("MusicService","called playSong()");
 		//play
 		player.reset();
 		//get song
@@ -120,11 +123,12 @@ MediaPlayer.OnCompletionListener {
 
 	//set the song
 	public void setSong(int songIndex){
-		songPosn=songIndex;	
+	    songPosn=songIndex;
 	}
 
 	@Override
 	public void onCompletion(MediaPlayer mp) {
+		Log.v("MusicService", "called onCompletion()");
 		//check if playback has reached the end of a track
 		if(player.getCurrentPosition()>0){
 			mp.reset();
@@ -134,13 +138,14 @@ MediaPlayer.OnCompletionListener {
 
 	@Override
 	public boolean onError(MediaPlayer mp, int what, int extra) {
-		Log.v("MUSIC PLAYER", "Playback Error");
+		Log.v("MusicService", "Playback Error");
 		mp.reset();
 		return false;
 	}
 
 	@Override
 	public void onPrepared(MediaPlayer mp) {
+		Log.v("MusicService", "called onPrepared()");
 		//start playback
 		mp.start();
 		//notification
@@ -163,31 +168,41 @@ MediaPlayer.OnCompletionListener {
 
 	//playback methods
 	public int getPosn(){
+		Log.v("MusicService playback method", "called getPosn()");
 		return player.getCurrentPosition();
 	}
 
 	public int getDur(){
+		Log.v("MusicService playback method", "called getDur()");
+
 		return player.getDuration();
 	}
 
 	public boolean isPng(){
+//		Log.v("MusicService playback method", "called isPng()");
 		return player.isPlaying();
 	}
 
 	public void pausePlayer(){
+		Log.v("MusicService playback method", "called pausePlayer()");
+
 		player.pause();
 	}
 
 	public void seek(int posn){
+		Log.v("MusicService playback method", "called seek()");
+
 		player.seekTo(posn);
 	}
 
 	public void go(){
-		player.start();
+        Log.d("MusicService","called go()");
+        player.start();
 	}
 
 	//skip to previous track
 	public void playPrev(){
+		Log.d("MusicService","called playPrev()");
 		songPosn--;
 		if(songPosn<0) songPosn=songs.size()-1;
 		playSong();
@@ -195,6 +210,7 @@ MediaPlayer.OnCompletionListener {
 
 	//skip to next
 	public void playNext(){
+		Log.d("MusicService","called playNext()");
 		if(shuffle){
 			int newSong = songPosn;
 			while(newSong==songPosn){
@@ -211,6 +227,8 @@ MediaPlayer.OnCompletionListener {
 
 	@Override
 	public void onDestroy() {
+		Log.d("MusicService","called onDestroy()");
+
 		stopForeground(true);
 	}
 
