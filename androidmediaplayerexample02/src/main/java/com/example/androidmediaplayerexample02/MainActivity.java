@@ -12,7 +12,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.util.concurrent.TimeUnit;
-
+// Added by JH in iPad 'working copy' app at 9:19 Jan 11, 2018
 public class MainActivity extends Activity {
     private Button b1,b2,b3,b4;
     private ImageView iv;
@@ -124,7 +124,7 @@ public class MainActivity extends Activity {
             }
         });
     }
-
+o
     private Runnable UpdateSongTime = new Runnable() {
         public void run() {
             startTime = mediaPlayer.getCurrentPosition();
