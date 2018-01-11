@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import java.util.concurrent.TimeUnit;
 // Added by JH in iPad 'working copy' app at 9:19 Jan 11, 2018
+// Add once more for testing at 9:26 Jan 11
 public class MainActivity extends Activity {
     private Button b1,b2,b3,b4;
     private ImageView iv;
